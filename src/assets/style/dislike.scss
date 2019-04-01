@@ -1,0 +1,42 @@
+.dislike {
+  float: right;
+  position: relative;
+  overflow: hidden;
+  width: 16px;
+  height: 16px;
+  line-height: 15px;
+  white-space: nowrap;
+  font-size:12px;
+  border-radius: 16px;
+  cursor: pointer;
+  direction: rtl;
+  transition: all .2s linear;
+  color: $cc;
+  &:hover {
+    width: 65px;
+    background: red;
+    color: #fff;
+    .dislike-desc {
+      color: #fff;
+      transition: color .1s .2s linear;
+    }
+    // .dislike-icon {
+    //   background: red;
+    // }
+  }
+  .dislike-desc {
+    display: inline-block;
+    color: transparent;
+    padding-right: 15px;
+    transform: scale(.9);
+  }
+  .dislike-icon {
+    position: absolute;
+    right:4px;
+    top:0;
+    border-radius: 16px;
+    &:after {
+      content: '\2715';
+    }
+  }
+}

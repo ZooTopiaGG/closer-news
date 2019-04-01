@@ -1,0 +1,223 @@
+@charset 'utf-8';
+
+$progressColor: #5a94ff;
+$bufferedColor: #f8e8dc;
+$fontColor: #fff;
+
+.player {
+  position: relative;
+  width: 100%;
+  background:#000;
+  overflow: hidden;
+  .video {
+    display: block;
+  }
+  .controls {
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+
+    .controls-main {
+      position: absolute;
+      bottom: -30px;
+      width: 100%;
+      height: 30px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background: linear-gradient(to bottom, transparent, rgba(0,0,0,1));
+      transition: bottom .2s linear;
+    }
+    .video {
+      display: block;
+    }
+    .btn {
+      width: 20px;
+      height: 20px;
+      margin: 0 10px;
+      cursor: pointer;
+      &:hover {
+        opacity: .8;
+      }
+    }
+    .play {
+      @extend .btn;
+      background:url(../imgs/play.png) center no-repeat;
+    }
+    .pause {
+      @extend .btn;
+      background:url(../imgs/pause.png) center no-repeat;
+    }
+    .duration {
+      height: 100%;
+    }
+    .progress {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 0;
+      height: 100%;
+    }
+    .dot {
+      position: absolute;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 6px;
+      background:$fontColor;
+      // background:url(../imgs/dot.png) center no-repeat;
+    }
+    .dot:hover {
+      box-shadow: 0 0 3px 1px $fontColor;
+    }
+    .progress-bar {
+      position: relative;
+      height: 3px;
+      flex-grow: 1;
+      background:#fff;
+      cursor: pointer;
+
+      
+      .buffered {
+        @extend .progress;
+        background:$bufferedColor;
+      }
+      .current {
+        @extend .progress;
+        background:$progressColor;
+      }
+      .dot {
+        top: -4px;
+        margin-left: -3px;
+      }
+    }
+    .time {
+      margin-left: 15px;
+      color: $fontColor;
+      cursor: default;
+    }
+    .sound {
+      position: relative;
+      margin: 0 10px;
+    }
+    .mute {
+      @extend .btn;
+      margin: 0;
+      background:url(../imgs/mute.png) center no-repeat;
+    }
+    .muted {
+      @extend .btn;
+      margin: 0;
+      background:url(../imgs/muted.png) center no-repeat;
+    }
+    .sound-wrap {
+      position: absolute;
+      left: 0;
+      bottom: 20px;
+      width: 20px;
+      height: 0;
+      background: rgba(0,0,0,.5);
+      border-radius: 5px;
+      transition: height .1s linear;
+      overflow: hidden;
+      .sound-progress {
+        position: absolute;
+        top: 9px;
+        left: 9px;
+        width: 2px;
+        height: 50px;
+        background: #fff;
+        border-radius: 2px;
+        cursor: pointer;
+      }
+      .dot {
+        bottom: 0;
+        margin-left: -4px;
+        margin-bottom: -5px;
+      }
+    }
+    .sound-wrap-show {
+      height: 68px;
+    }
+    .fullscreen {
+      @extend .btn;
+      margin-left: 0;
+      margin-right: 5px;
+      background:url(../imgs/fullscreen.png) center no-repeat;
+    }
+
+
+    .controls-duration {
+      position: absolute;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background:#999;
+      .controls-buffered {
+        @extend .progress;
+        background: $bufferedColor;
+      }
+      .controls-current {
+        @extend .progress;
+        background:$progressColor;
+      }
+    }
+
+    .controls-time {
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      background:rgba(0,0,0,.5);
+      border-radius: 5px;
+      padding: 3px 5px;
+      color: $fontColor;
+      transition: all .2s linear;
+      cursor: default;
+    }
+    
+    .controls-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -25px;
+      margin-left: -25px;
+      width: 50px;
+      height: 50px;
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+
+    .controls-loading {
+      @extend .controls-btn;
+      background:url(../imgs/loading2.png);
+      animation: loading 1s linear infinite;
+      cursor: default;
+      display: none;
+    }
+    
+    .controls-play {
+      @extend .controls-btn;
+      background:url(../imgs/play4.png);
+    }
+
+    .controls-pause {
+      @extend .controls-btn;
+      background:url(../imgs/pause2.png);
+    }
+  }
+
+
+  &:hover {
+    .controls-main {
+      bottom: 0;
+    }
+    .controls-duration {
+      display: none;
+    }
+    .controls-time {
+      opacity: 0;
+      bottom: 30px;
+    }
+  }
+}

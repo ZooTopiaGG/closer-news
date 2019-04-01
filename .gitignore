@@ -1,0 +1,7 @@
+
+doc/
+node_modules/
+output/
+public/
+manifest.json
+package-lock.json

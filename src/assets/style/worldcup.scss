@@ -1,0 +1,133 @@
+
+.worldcup {
+  
+  .wc-dlg {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    width: 252px;
+    height: 336px;
+    text-align: center;
+    margin-top: -170px;
+    margin-left: -125px;
+    border-radius: 5px;
+    overflow: hidden;
+    background: url(../imgs/wc/2018worldcup_dlg.png) no-repeat;
+    box-shadow: 0 0 10px 1px rgba(0,0,0,.2);
+    animation: fadeIn .2s 0s linear;
+    display: none;
+    z-index: 999;
+    &.active {
+      display: block;
+      .wc-btns-1 {
+        display: none;
+      }
+      .wc-btns-2 {
+        display: flex;
+      }
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      transform: scale(0) rotate(180deg);
+      opacity: 0;
+    }
+  }
+  .wc-wrap {
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+  }
+  .wc-reward {
+    height: 36px;
+    line-height: 36px;
+    background: url(../imgs/wc/2018worldcup_reward.png) center no-repeat;
+    text-align: center;
+    padding-left: 30px;
+    color: #66ef96;
+  }
+  .wc-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 51px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+  }
+  .wc-card-img {
+    width: 89px;
+    height: 51px;
+    background: url(../imgs/wc/2018worldcup_card.png) center no-repeat;
+    margin-right: 10px;
+  }
+  .wc-title {
+    font-size: 16px;
+    line-height: 28px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+  }
+  .wc-desc {
+    font-size: 14px;
+    color: #fff3c8;
+  }
+  .wc-btns-1, .wc-btns-2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    display: none;
+  }
+  .wc-btns-1 {
+    display: flex;
+  }
+  .wc-btn {
+    line-height: 28px;
+    padding: 0 14px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    color: #105227;
+    transition: all .2s linear;
+  }
+  .wc-btn1, .wc-btn3 {
+    @extend .wc-btn;
+    border-color: #b5ffcf;
+    background: #b5ffcf;
+    &:hover {
+      border-color: #4bf586;
+      background: #4bf586;
+    }
+  }
+  .wc-btn0, .wc-btn2 {
+    @extend .wc-btn;
+    border-color: #60ee92;
+    color: #fff;
+    margin-right: 20px;
+    &:hover {
+      border-color: #16f062;
+      background: rgba(0,0,0,.1)
+    }
+  }
+  .wc-dlg-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 18px;
+    color: #ffe3cd;
+    cursor: pointer;
+    &:after {
+      content: '\2715';
+    }
+    &:hover {
+      color: #f8ab70;
+    }
+  }
+}

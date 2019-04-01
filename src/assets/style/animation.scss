@@ -1,0 +1,118 @@
+@charset 'utf-8';
+
+
+/*
+* 默认进出动画
+*/
+.react-animaition-appear {
+    opacity: 0.01;
+}
+.react-animaition-appear.react-animaition-appear-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+.react-animaition-enter {
+    opacity: 0.01;
+}
+.react-animaition-enter.react-animaition-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+.react-animaition-leave {
+    opacity: 1;
+}
+.react-animaition-leave.react-animaition-leave-active {
+    opacity: 0.01;
+    transition: opacity 500ms ease-in;
+}
+
+/**
+* 内容动画
+*/
+.item-animaition-appear {
+  opacity: 0.01;
+}
+.item-animaition-appear.item-animaition-appear-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.item-animaition-enter {
+  opacity: 0.01;
+}
+.item-animaition-enter.item-animaition-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.item-animaition-leave {
+  margin-left: 0;
+}
+.item-animaition-leave.item-animaition-leave-active {
+  margin-left: -300px;
+  transition: all 200ms linear;
+}
+
+/**
+* tip动画
+*/
+
+.tip-animaition-appear {
+  opacity: 0.01;
+}
+.tip-animaition-appear.tip-animaition-appear-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.tip-animaition-enter {
+  opacity: 0.01;
+}
+.tip-animaition-enter.tip-animaition-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.tip-animaition-leave {
+  // height: 22px;
+}
+.tip-animaition-leave.tip-animaition-leave-active {
+  // margin-top: -22px;
+  animation: tipSlideUp .2s linear forwards;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gifAni {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(10);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes tipSlideUp {
+  from {
+    margin-top: 8px;
+    margin-bottom: -10px;
+  }
+  to {
+    margin-top: -22px;
+    margin-bottom: 10px;
+  }
+}
